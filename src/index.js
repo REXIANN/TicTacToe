@@ -23,10 +23,16 @@ class Board extends React.Component {
     }
   }
 
+  handleClick(i) {
+    const squares = this.state.squares.slice(); // 기존의 squares를 복사한다
+    squares[i] = 'X'; // 복사한 squares에서 해당 값을 변경
+    this.setState({ squares: squares }) // 갱신된 squares를 기존 squares 대신 넣어 준다
+  }
+
   renderSquare(i) {
     return <Square 
       value={ this.state.squares[i] } 
-      onclick={ () => this.handleClick(i) }  
+      onClick={ () => this.handleClick(i) }  
     />;
   }
 
