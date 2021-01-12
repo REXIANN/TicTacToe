@@ -1,5 +1,18 @@
 # Getting Started with Create React App
 
+개발 초짜의 리액트 예습. 공식 홈페이지를 보며 하나씩 공부해보자!
+
+⚠️ 최신버전의 노드 설치가 필요합니다!
+
+## 시작하기
+```
+npx create-react-app tictactoe
+```
+리액트는 페이스북이 만든 프레임워크이다. 페이스북은 항상 최신 라이브러리를 사용하는 것을 권장하므로 npm 또는 yarn을 통해서 create-react-app을 설치한 경우 그 라이브러리를 **지우라고** 설명한다. npx 명령어를 통해 그때마다 제일 최신버전의 create-react-app을 사용하여 리액트앱(?)을 만들 수 있으니 참고하자.
+
+## 불변성이 중요한 이유
+코드에서 기존의 배열을 수정하지 않고 `.slice` 연산자를 사용하여 `squares` 배열의 복사본을 만들어 복사본을 조작한 뒤 기존 배열을 바꿔치기 하였다. 리액트를 이처럼 기존의 값을 수정하는 것을 허락하지 않는 **불변성**을 지니고 있다. 그렇다면 불변성은 왜 중요할까?
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
