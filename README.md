@@ -5,13 +5,32 @@
 ⚠️ 최신버전의 노드 설치가 필요합니다!
 
 ## 시작하기
+
 ```
 npx create-react-app tictactoe
 ```
+
 리액트는 페이스북이 만든 프레임워크이다. 페이스북은 항상 최신 라이브러리를 사용하는 것을 권장하므로 npm 또는 yarn을 통해서 create-react-app을 설치한 경우 그 라이브러리를 **지우라고** 설명한다. npx 명령어를 통해 그때마다 제일 최신버전의 create-react-app을 사용하여 리액트앱(?)을 만들 수 있으니 참고하자.
+
+## React란 무엇인가요?
+
+React는 사용자 인터페이스를 구축하기 위한 선언적이고 효율적이며 유연한 JavaScript 라이브러리이다. "컴포넌트"라고 불리는 작고 고립된 코드의 파편을 이용하여 복잡한 UI를 구성하도록 돕는다. React는 몇 가지 종류의 컴포넌트를 가지지만 우리는 `React.Compoenet`의 하위 클래스를 우선 사용할 것이다.
+
+## Props을 통한 데이터 전달
+
+```
+class Board extends React.Component {
+  renderSquare(i) {
+    return <Square value={i} />;
+  }
+}
+```
+
 
 ## 불변성이 중요한 이유
 코드에서 기존의 배열을 수정하지 않고 `.slice` 연산자를 사용하여 `squares` 배열의 복사본을 만들어 복사본을 조작한 뒤 기존 배열을 바꿔치기 하였다. 리액트를 이처럼 기존의 값을 수정하는 것을 허락하지 않는 **불변성**을 지니고 있다. 그렇다면 불변성은 왜 중요할까?
+
+-----
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
