@@ -2,17 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-class Square extends React.Component {
-  render() {
-    return (
-      <button 
-        className="square"
-        onClick={ () => this.props.onClick() }
-      >
-        {this.props.value}
-      </button>
-    );
-  }
+function Square(props) {
+    return <button 
+            className="square"
+            onClick={ props.onClick }
+          >
+            {props.value}
+          </button>
+    
 }
 
 class Board extends React.Component {
@@ -20,13 +17,17 @@ class Board extends React.Component {
     super(props)
     this.state = {
       squares: Array(9).fill(null),
+      xIsNext: true,
     }
   }
 
   handleClick(i) {
     const squares = this.state.squares.slice(); // 기존의 squares를 복사한다
-    squares[i] = 'X'; // 복사한 squares에서 해당 값을 변경
-    this.setState({ squares: squares }) // 갱신된 squares를 기존 squares 대신 넣어 준다
+    squares[i] = this.state.xIsNext ? 'X' : 'O'; // 복사한 squares에서 해당 값을 변경
+    this.setState({ 
+      squares: squares,
+      xIsNext: !this.state.xIsNext,
+     }) // 갱신된 squares를 기존 squares 대신 넣어 준다
   }
 
   renderSquare(i) {
